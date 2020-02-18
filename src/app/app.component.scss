@@ -1,0 +1,32 @@
+body {
+    padding: 0px;
+    margin: 0px; 
+   }
+   .titlebar-drag-region {  /*added*/
+    top: 6px;
+    left: 6px;
+    display: block;
+    position: absolute;
+    width: calc(100% - 12px);
+    height: calc(100% - 6px);
+    z-index: -1;
+    -webkit-app-region: drag;
+  }
+  
+  .title-bar {
+    display: flex;
+    height: 30px;
+    border: 1px solid gray;
+    align-items: center;
+    position: relative;  /*added*/
+    /*-webkit-app-region: drag;*/  /*removed*/
+  }
+  
+  .title {
+    margin-left: 10px;
+  }
+  
+  .title-bar-btns {
+    margin-left: auto;
+    -webkit-app-region: no-drag;
+  }
