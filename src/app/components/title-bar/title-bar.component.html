@@ -1,0 +1,19 @@
+<div class="titlebar">
+    <div class="titlebag-title">Window Header</div>
+    <div class="titlebar-drag-region"></div>
+    <div class="titlebar-btns">
+        <button id="min-btn" (click)="this.minimize()">
+            <i class="material-icons">
+                remove
+            </i>
+        </button>
+        <button id="max-btn" (click)="this.maximize()">
+            <img [src]="this.maximizeIcon.src" alt="" class="tsr-material-icons">
+        </button>
+        <button id="close-btn" (click)="this.close()">
+            <i class="material-icons">
+                close
+            </i>
+        </button>
+    </div>
+</div>

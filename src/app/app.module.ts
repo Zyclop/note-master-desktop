@@ -14,8 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { HomeModule } from './home/home.module';
-
 import { AppComponent } from './app.component';
 
 // AoT requires an exported function for factories
@@ -24,22 +22,17 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { TitleBarComponent } from './components/title-bar/title-bar.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TitleBarComponent, HomeComponent],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     CoreModule,
     SharedModule,
-    HomeModule,
     AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
@@ -48,13 +41,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         deps: [HttpClient]
       }
     }),
-    BrowserAnimationsModule,
-    MatGridListModule,
-    MatInputModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatListModule,
-    DragDropModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

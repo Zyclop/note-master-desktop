@@ -1,0 +1,64 @@
+$tittlebar-height: 30px;
+$tittlebar-background-color: #2f3640;
+$tittlebar-font-color: #f5f6fa;
+
+.titlebar {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: $tittlebar-height;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $tittlebar-background-color;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji;
+  color: $tittlebar-font-color;
+}
+
+.titlebar-drag-region {
+  top: 6px;
+  left: 6px;
+  display: block;
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  z-index: -1;
+  -webkit-app-region: drag;
+}
+
+.titlebag-title {
+  margin-left: 10px;
+}
+
+.titlebar-btns {
+  -webkit-app-region: no-drag;
+  height: 100%;
+	display: flex;
+  button {
+    padding: 0;
+    height: $tittlebar-height;
+    width: $tittlebar-height + ($tittlebar-height / 2);
+    background-color: unset;
+    outline: none;
+    border: unset;
+
+    i {
+      font-size: 20px;
+      color: $tittlebar-font-color;
+    }
+    img {
+      width: 18px;
+    }
+  }
+
+  #min-btn:hover,
+  #max-btn:hover {
+    background-color: #39404e;
+  }
+
+  #close-btn:hover {
+    background-color: #c23616;
+  }
+}

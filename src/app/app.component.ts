@@ -8,39 +8,21 @@ import { AppConfig } from '../environments/environment';
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 	constructor(
 		public electronService: ElectronService,
 		private translate: TranslateService,
 	) {
-		translate.setDefaultLang('en');
-		console.log('AppConfig', AppConfig);
+		// translate.setDefaultLang('en');
+		// console.log('AppConfig', AppConfig);
 
-		if (electronService.isElectron) {
-			console.log(process.env);
-			console.log('Mode electron');
-			console.log('Electron ipcRenderer', electronService.ipcRenderer);
-			console.log('NodeJS childProcess', electronService.childProcess);
-		} else {
-			console.log('Mode web');
-		}
-	}
-	ngOnInit() {
-		var remote = require('electron').remote; 
-
-		document.getElementById("min-btn").addEventListener("click", function (e) {
-			var window = remote.getCurrentWindow();
-			window.minimize();
-		});
-		
-		document.getElementById("max-btn").addEventListener("click", function (e) {
-			var window = remote.getCurrentWindow();
-			window.maximize();
-		});
-		
-		document.getElementById("close-btn").addEventListener("click", function (e) {
-			var window = remote.getCurrentWindow();
-			window.close();
-		});
+		// if (electronService.isElectron) {
+		// 	console.log(process.env);
+		// 	console.log('Mode electron');
+		// 	console.log('Electron ipcRenderer', electronService.ipcRenderer);
+		// 	console.log('NodeJS childProcess', electronService.childProcess);
+		// } else {
+		// 	console.log('Mode web');
+		// }
 	}
 }
