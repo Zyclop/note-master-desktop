@@ -4,6 +4,7 @@ $tittlebar-font-color: #f5f6fa;
 
 .titlebar {
 	position: relative;
+	z-index: 100;
 	top: 0;
 	left: 0;
 	height: $tittlebar-height;

@@ -21,14 +21,15 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [AppComponent, TitleBarComponent, HomeComponent],
+  declarations: [AppComponent, TitleBarComponent, HomeComponent, ToolbarComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -49,4 +50,4 @@ import { HomeComponent } from './pages/home/home.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
