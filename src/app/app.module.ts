@@ -22,6 +22,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 import { MatButtonModule } from '@angular/material/button';
+import { AngularSplitModule } from 'angular-split';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
@@ -44,6 +45,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
         deps: [HttpClient]
       }
     }),
+    AngularSplitModule.forRoot(),
     BrowserAnimationsModule,
     MatButtonModule
   ],

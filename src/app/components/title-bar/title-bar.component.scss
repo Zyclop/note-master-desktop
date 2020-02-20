@@ -4,7 +4,7 @@ $tittlebar-font-color: #f5f6fa;
 
 .titlebar {
 	position: relative;
-	z-index: 100;
+	z-index: 99;
 	top: 0;
 	left: 0;
 	height: $tittlebar-height;
@@ -16,6 +16,7 @@ $tittlebar-font-color: #f5f6fa;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
 		Segoe UI Emoji;
 	color: $tittlebar-font-color;
+	
 }
 
 .titlebar-drag-region {
@@ -30,7 +31,12 @@ $tittlebar-font-color: #f5f6fa;
 }
 
 .titlebag-title {
-	margin-left: 10px;
+    margin-left: 10px;
+    font-family: "Odibee Sans", cursive;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #9ea3b4;
 }
 
 .titlebar-btns {

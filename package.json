@@ -95,6 +95,7 @@
     "node": ">=10.13.0"
   },
   "dependencies": {
+    "angular-split": "^3.0.3",
     "tslib": "1.10.0"
   }
 }
