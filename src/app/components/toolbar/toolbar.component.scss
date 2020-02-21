@@ -1,0 +1,44 @@
+section#toolbar {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #2F3640;
+    justify-content: center;
+
+    section#main-bar{
+        width: 80px;
+        min-width: 80px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: #2F3640;
+        
+        .btn {
+            height: 60px;
+            width: 60px;
+            margin-top: 15px;
+            background-color: #353b48;
+            outline: unset;
+            border: unset;
+            color: #10ac84;
+            border-radius: 50%;
+
+            i.notes {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    
+    section#child-bar{
+        height: 100%;
+        width: 100%;
+        max-width: 219px;
+        border-radius: 15px 0 0 0;
+        background-color: #353B48;
+        box-shadow: -1px 0px 5px 0px #00000029;
+    }
+
+}

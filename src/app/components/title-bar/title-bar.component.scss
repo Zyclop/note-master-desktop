@@ -1,0 +1,118 @@
+$tittlebar-height: 40px;
+$tittlebar-background-color: #2f3640;
+$tittlebar-font-color: #f5f6fa;
+
+.titlebar {
+	position: relative;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	height: $tittlebar-height;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: $tittlebar-background-color;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
+		Segoe UI Emoji;
+	color: $tittlebar-font-color;
+	
+}
+
+.titlebar-drag-region {
+	top: 6px;
+	left: 6px;
+	display: block;
+	position: absolute;
+	width: calc(100% - 6px);
+	height: calc(100% - 6px);
+	z-index: -1;
+	-webkit-app-region: drag;
+}
+
+.titlebag-title {
+    margin-left: 10px;
+    font-family: "Odibee Sans", cursive;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #9ea3b4;
+}
+
+.titlebar-btns {
+	-webkit-app-region: no-drag;
+	height: 100%;
+	display: flex;
+
+	div.user-area {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		user-select: none;
+		padding: 0 5px;
+		div.user-icon-wrapper {
+			position: relative;
+			height: 32px;
+			img {
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				position: relative;
+			}
+		}
+		div.user-icon-wrapper:after {
+			content: "";
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			border: 2px solid #2f3640;
+		}
+		span {
+			margin-left: 5px;
+			padding: 0;
+			line-height: 0;
+			font-size: 14px;
+			-webkit-font-smoothing: antialiased;
+		}
+	}
+	
+	div.user-area:hover {
+		background-color: #39404e;
+
+		div.user-icon-wrapper:after {
+			border: 2px solid #39404e;
+		}
+	}
+
+	#min-btn,
+	#max-btn,
+	#close-btn {
+		padding: 0;
+		height: $tittlebar-height;
+		width: $tittlebar-height + ($tittlebar-height / 2);
+		background-color: unset;
+		outline: none;
+		border: unset;
+
+		i {
+			font-size: 20px;
+			color: $tittlebar-font-color;
+		}
+		img {
+			width: 18px;
+		}
+	}
+
+	#min-btn:hover,
+	#max-btn:hover {
+		background-color: #39404e;
+	}
+
+	#close-btn:hover {
+		background-color: #c23616;
+	}
+}
