@@ -6,10 +6,13 @@ section#toolbar {
     display: flex;
     background-color: #2F3640;
     justify-content: center;
+    user-select: none;
 
     section#main-bar{
+        position: absolute;
+        left: 0;
+        z-index: 98;
         width: 80px;
-        min-width: 80px;
         height: 100%;
         display: flex;
         align-items: center;
@@ -25,20 +28,29 @@ section#toolbar {
             border: unset;
             color: #10ac84;
             border-radius: 50%;
-
+            transition: 100ms all ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
             i.notes {
                 transform: rotate(-90deg);
             }
         }
+        .btn:hover {
+            box-shadow: 0px 0px 5px 0px #00000029;
+            background-color: #3a3f4b;
+        }
     }
     
     section#child-bar{
+        margin-left: 80px;
         height: 100%;
         width: 100%;
-        max-width: 219px;
         border-radius: 15px 0 0 0;
         background-color: #353B48;
         box-shadow: -1px 0px 5px 0px #00000029;
+        overflow-x: hidden;
     }
 
 }

@@ -18,38 +18,49 @@ import { AppComponent } from './app.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 import { MatButtonModule } from '@angular/material/button';
 import { AngularSplitModule } from 'angular-split';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { NoteToolComponent } from './components/toolbar/note-tool/note-tool.component';
 
 @NgModule({
-  declarations: [AppComponent, TitleBarComponent, HomeComponent, ToolbarComponent],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    CoreModule,
-    SharedModule,
-    AppRoutingModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
-    AngularSplitModule.forRoot(),
-    BrowserAnimationsModule,
-    MatButtonModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		TitleBarComponent,
+		HomeComponent,
+		ToolbarComponent,
+		NoteToolComponent
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		HttpClientModule,
+		CoreModule,
+		SharedModule,
+		AppRoutingModule,
+		TranslateModule.forRoot({
+			loader: {
+				provide: TranslateLoader,
+				useFactory: HttpLoaderFactory,
+				deps: [HttpClient]
+			}
+		}),
+		AngularSplitModule.forRoot(),
+		BrowserAnimationsModule,
+		MatButtonModule,
+		MatTooltipModule,
+		MatExpansionModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

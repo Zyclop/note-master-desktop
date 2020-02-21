@@ -1,0 +1,76 @@
+section#note-tool {
+    .header {
+        // background: url('../../../../assets/backgrounds/noise/bluenoise.png');
+        background-color: #40739e;
+        font-family: "rubik";
+        font-weight: 500;
+        letter-spacing: -1px;
+        font-size: 15px;
+        padding-left: 5px;
+        display: flex;
+        align-items: center;
+        height: 24px !important;
+		border-radius: unset;
+
+        span {
+            margin: 2px 0;
+            color: #1b1b1b;
+            white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			pointer-events: none;
+        }
+	}
+	.content {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.2s ease-out;
+		button {
+			width: 100%;
+			outline: unset;
+			border: unset;
+			background-color: unset;
+			display: flex;
+			align-items: center;
+			color: #10ac84;
+			height: 44px;
+			padding: 0;
+			margin: 1px;
+			user-select: none;
+			background-color: #3b4252;
+			cursor: pointer;
+			i {
+				margin: 0 15px;
+			}
+			span {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				font-family: "rubik";
+				font-weight: 500;
+				letter-spacing: -1px;
+				font-size: 13px;
+				text-transform: uppercase;
+			}
+		}
+		button.active {
+			background: linear-gradient(
+				270deg,
+				rgba(0, 170, 255, 0.185) 0%,
+				rgba(0, 170, 255, 0.014) 26%,
+				rgba(0, 212, 255, 0) 100%
+			);
+			background-color: #3b4252;
+			border-right: 5px solid #10ac84;
+		}
+		button:hover {
+			background: linear-gradient(
+				270deg,
+				rgba(0, 170, 255, 0.185) 0%,
+				rgba(0, 170, 255, 0.014) 26%,
+				rgba(0, 212, 255, 0) 100%
+			);
+			background-color: #3b4252;
+		}
+	}
+}

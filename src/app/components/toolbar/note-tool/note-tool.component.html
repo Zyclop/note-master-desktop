@@ -1,0 +1,18 @@
+<section id="note-tool">
+    <ng-container *ngFor="let buttonList of this.buttons">
+
+        <div class="header collapsible" (click)="this.collapse($event)">
+            <span>{{buttonList.title}}</span>
+        </div>
+
+        <div class="content">
+            <ng-container *ngFor="let button of buttonList.buttons">
+                <button (click)="this.active(button)" [class.active]="this.isActive(button)">
+                    <i class="material-icons">{{button.icon}}</i>
+                    <span>{{button.title}}</span>
+                </button>
+            </ng-container>
+        </div>
+
+    </ng-container>
+</section>
