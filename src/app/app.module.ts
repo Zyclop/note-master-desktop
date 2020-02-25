@@ -24,13 +24,15 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 import { MatButtonModule } from '@angular/material/button';
 import { AngularSplitModule } from 'angular-split';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatExpansionModule} from '@angular/material/expansion';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NoteToolComponent } from './components/toolbar/note-tool/note-tool.component';
+import { TsrMaterialModule } from './components/tsr/tsr-material.module';
+
 
 @NgModule({
 	declarations: [
@@ -58,7 +60,8 @@ import { NoteToolComponent } from './components/toolbar/note-tool/note-tool.comp
 		BrowserAnimationsModule,
 		MatButtonModule,
 		MatTooltipModule,
-		MatExpansionModule
+		DragDropModule,
+		TsrMaterialModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

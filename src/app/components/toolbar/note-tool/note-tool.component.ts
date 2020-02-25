@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToolButtonList, ToolButton } from '../toolbar.interfaces';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
 	selector: 'app-note-tool',
@@ -14,9 +15,26 @@ export class NoteToolComponent implements OnInit {
 			buttons: [
 				{ title: 'basic', icon: 'description' },
 				{ title: 'list', icon: 'check_box' },
-				{ title: 'image', icon: 'photo' },
+				{ title: 'image', icon: 'drag_indicator' },
 				{ title: 'draw', icon: 'gesture' },
 				{ title: 'audio', icon: 'mic' }
+			]
+		},
+		{
+			title: 'TEST',
+			buttons: [
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' },
+				{ title: 'test', icon: 'accessible_forward' }
 			]
 		}
 	]
@@ -36,12 +54,8 @@ export class NoteToolComponent implements OnInit {
 		return (button == this.activeButton);
 	}
 
-	collapse(collapseButton: any) {
-		if (collapseButton.toElement.nextElementSibling.style.maxHeight) {
-			collapseButton.toElement.nextElementSibling.style.maxHeight = null;
-		} else {
-			collapseButton.toElement.nextElementSibling.style.maxHeight = collapseButton.toElement.nextElementSibling.scrollHeight + "px";
-		}
+	drop(event: CdkDragDrop<string[]>, array: any[]) {
+		moveItemInArray(array, event.previousIndex, event.currentIndex);
 	}
 
 }
