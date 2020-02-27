@@ -1,5 +1,18 @@
 section#note-tool {
 	height: 100%;
+	.draggable:first-child {
+		.header {
+			animation: fade-in 100ms ease-in-out;
+			border-radius: 10px 0 0 0;
+		}
+		@keyframes fade-in {
+			0% {
+				border-radius: 0 0 0 0;
+			} 100% {
+				border-radius: 10px 0 0 0;
+			}
+		}
+	}
 	.header {
 		position: relative;
 		background-color: #40739e;
@@ -13,7 +26,7 @@ section#note-tool {
 		height: 24px !important;
 		border-radius: unset;
 		margin-bottom: 1px;
-
+		user-select: none;
 		span {
 			margin: 2px 0;
 			color: #1b1b1b;

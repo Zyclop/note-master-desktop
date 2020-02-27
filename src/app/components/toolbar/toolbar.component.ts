@@ -1,6 +1,7 @@
-import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
-import { MatTooltip } from '@angular/material/tooltip';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToolButton } from './toolbar.interfaces';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 enum KEY_CODE {
 	RIGHT_ARROW = 39,
@@ -13,48 +14,41 @@ enum KEY_CODE {
 	templateUrl: './toolbar.component.html',
 	styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent {
 
-	@ViewChild('noteBtnTooltip') noteBtnTooltip: MatTooltip;
-	@ViewChild('notebookBtnTooltip') notebookBtnTooltip: MatTooltip;
-	@ViewChild('groupBtnTooltip') groupBtnTooltip: MatTooltip;
+	public buttons: ToolButton[] = [
+		{ icon: 'note', url: 'note', classList:'rotated' },
+		{ icon: 'menu_book', url: 'note' },
+		{ icon: 'supervised_user_circle', url: 'note' }
+	]
 
-	private btnToolTips: MatTooltip[] = [];
-
-	private flagKey: boolean = false;
-
+	public activeButton: ToolButton;
+	
 	constructor(private _router: Router) {
 		this.setTool('note');
 	}
-	
-	ngOnInit(): void {
+
+	active(button: ToolButton) {
+		this.activeButton = button;
 	}
-	
-	@HostListener('window:keydown', ['$event'])
-	keydownEvent(event: KeyboardEvent) {
-		if (event.keyCode === KEY_CODE.ALT && !this.flagKey) {
-			if (this.btnToolTips.length == 0) this.btnToolTips.push(this.noteBtnTooltip, this.notebookBtnTooltip, this.groupBtnTooltip);
-			for (const tooltip of this.btnToolTips) {
-				tooltip.show();
-				tooltip.hideDelay = 999999;
-			}
-			this.flagKey = true;
-		}
+
+	isActive(button: ToolButton) {
+		return (button == this.activeButton);
 	}
-	@HostListener('window:keyup', ['$event'])
-	keyupEvent(event: KeyboardEvent) {
-		if (event.keyCode === KEY_CODE.ALT && this.flagKey) {
-			for (const tooltip of this.btnToolTips) {
-				tooltip.hideDelay = 0;
-				tooltip.hide();
-			}
-			this.flagKey = false;
-		}
+
+	onClick(button: ToolButton) {
+		this.setTool(button.url);
+		this.active(button);
 	}
 
 	setTool(toolname: string) {
 		let currentRoute = (this._router.url != '/') ? this._router.url : '/home';
-		this._router.navigateByUrl(currentRoute+"(tool:"+toolname+")");
+		this._router.navigateByUrl(currentRoute + "(tool:" + toolname + ")");
+	}
+
+	drop(event: CdkDragDrop<string[]>, array: any[]) {
+		console.log(event);
+		moveItemInArray(array, event.previousIndex, event.currentIndex);
 	}
 
 }

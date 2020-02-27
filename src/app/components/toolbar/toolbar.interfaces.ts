@@ -9,6 +9,8 @@ export interface ToolButtonList {
 }
 
 export interface ToolButton {
-  title: string;
-  icon: string;
+  title?: string;
+  icon?: string;
+  url?: string;
+  classList?: string;
 }

@@ -1,16 +1,12 @@
 section#app {
     display: flex;
     flex-direction: column;
-    height: 100%;
 
     section#titlebar-slot {
-        height: 41px;
+        height: var(--titlebar-height);
     }
 
     section#app-slot {
-        border-radius: 10px 0 0 0;
-        height: 100%;
-        background-color: white;
     }
     
 }

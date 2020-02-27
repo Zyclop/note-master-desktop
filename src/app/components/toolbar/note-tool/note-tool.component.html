@@ -2,7 +2,7 @@
     <div cdkDropList (cdkDropListDropped)="this.drop($event, this.buttons)">
         <ng-container *ngFor="let buttonList of this.buttons">
             
-            <div class="draggable" cdkDrag cdkDragBoundary="#note-tool">
+            <div class="draggable" cdkDrag cdkDragLockAxis="y">
                 <tsr-drop-down>
                     <tsr-drop-down-header >
                         <div class="header" >

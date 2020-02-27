@@ -1,19 +1,7 @@
 <section id="toolbar">
-    <section id="main-bar">
-        <button (click)="this.setTool('note')" class="btn" matTooltip="Notes" matTooltipPosition="after" #noteBtnTooltip="matTooltip">
-            <i class="material-icons notes">
-                note
-            </i>
-        </button>
-        <button class="btn" matTooltip="Notebooks" matTooltipPosition="after" #notebookBtnTooltip="matTooltip">
-            <i class="material-icons">
-                menu_book
-            </i>
-        </button>
-        <button routerLink="" class="btn" matTooltip="Groups" matTooltipPosition="after" #groupBtnTooltip="matTooltip">
-            <i class="material-icons">
-                supervised_user_circle
-            </i>
+    <section id="main-bar" cdkDropList (cdkDropListDropped)="this.drop($event, this.buttons)">
+        <button cdkDrag cdkDragBoundary="#main-bar" cdkDragLockAxis="y" *ngFor="let button of this.buttons" (click)="this.onClick(button)" [class.active]="this.isActive(button)">
+            <i class="material-icons" [class]="button.classList">{{button.icon}}</i>
         </button>
     </section>
     <section id="child-bar">

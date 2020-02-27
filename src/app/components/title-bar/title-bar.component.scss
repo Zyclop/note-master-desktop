@@ -1,21 +1,17 @@
-$tittlebar-height: 40px;
-$tittlebar-background-color: #2f3640;
-$tittlebar-font-color: #f5f6fa;
-
 .titlebar {
 	position: relative;
 	z-index: 99;
 	top: 0;
 	left: 0;
-	height: $tittlebar-height;
+	height: var(--tittlebar-height);
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: $tittlebar-background-color;
+	background-color: var(--tittlebar-background);
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji,
 		Segoe UI Emoji;
-	color: $tittlebar-font-color;
+	color: var(--titlebar-font-color);
 	
 }
 
@@ -92,15 +88,15 @@ $tittlebar-font-color: #f5f6fa;
 	#max-btn,
 	#close-btn {
 		padding: 0;
-		height: $tittlebar-height;
-		width: $tittlebar-height + ($tittlebar-height / 2);
+		height: var(--tittlebar-height);
+		width: calc((var(--tittlebar-height) + var(--tittlebar-height)) / 2);
 		background-color: unset;
 		outline: none;
 		border: unset;
 
 		i {
 			font-size: 20px;
-			color: $tittlebar-font-color;
+			color: var(--titlebar-font-color);
 		}
 		img {
 			width: 18px;
