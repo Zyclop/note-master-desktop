@@ -21,18 +21,15 @@ section#toolbar {
         height: 100%;
         overflow-y: auto;
         box-shadow: -1px 0px 5px 0px #00000029;
-        border-radius: 15px 0 0 0;
     }
     
     section#child-bar::-webkit-scrollbar {
-        width: 10px;
+        width: 7px;
     }
     section#child-bar::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px #3B4252; 
-        background-color: rgb(53, 58, 71);
+        background-color: #383F49;
     }
     section#child-bar::-webkit-scrollbar-thumb {
-        -webkit-box-shadow: inset 0 0 6px rgb(20, 83, 68);
         background-color: #10AC84;
     }
 }

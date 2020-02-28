@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'tsr-drop-down-header',
-  templateUrl: './tsr-drop-down-header.component.html',
+  template: `
+  <div class="collapsible" (click)="this.toggle()">
+      <i *ngIf="this.useIcon" class="material-icons" [class.active]="this.isActive">arrow_drop_down</i>
+      <ng-content></ng-content>
+  </div>
+  `,
   styleUrls: ['./tsr-drop-down-header.component.scss']
 })
-export class TsrDropDownHeaderComponent implements OnInit {
+export class TsrDropDownHeaderComponent {
+
+  isActive: boolean = false;
+  @Input('dropIcon') useIcon: boolean = true;
 
   constructor() { }
 
-  ngOnInit(): void {
+  toggle() {
+    if (!this.useIcon) return;
+    this.isActive = !this.isActive;
   }
 
 }

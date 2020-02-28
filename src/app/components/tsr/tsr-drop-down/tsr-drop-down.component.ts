@@ -10,7 +10,6 @@ export class TsrDropDownComponent implements OnInit {
 	private body: any;
 
 	ngOnInit(): void {
-		console.log(this.elt)
 		for (const children of this.elt.nativeElement.children) {
 			console.log(children.localName);
 			if (children.localName == 'tsr-drop-down-header') {
@@ -18,10 +17,8 @@ export class TsrDropDownComponent implements OnInit {
 					if (this.body.children[0].style.maxHeight) {
 						this.body.children[0].style.maxHeight = null;
 					} else {
-						console.log(this.body.children[0].scrollHeight);
 						this.body.children[0].style.maxHeight = this.body.children[0].scrollHeight+"px";
 					}
-					console.log(this.body.children[0].style);
 				});
 			}
 			if (children.localName == 'tsr-drop-down-body') {

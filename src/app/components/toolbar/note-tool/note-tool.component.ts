@@ -15,7 +15,7 @@ export class NoteToolComponent implements OnInit {
 			buttons: [
 				{ title: 'basic', icon: 'description' },
 				{ title: 'list', icon: 'check_box' },
-				{ title: 'image', icon: 'drag_indicator' },
+				{ title: 'image', icon: 'photo' },
 				{ title: 'draw', icon: 'gesture' },
 				{ title: 'audio', icon: 'mic' }
 			]
@@ -41,7 +41,8 @@ export class NoteToolComponent implements OnInit {
 
 	public activeButton: ToolButton;
 
-	constructor() { }
+	constructor() {
+	}
 
 	ngOnInit(): void {
 	}

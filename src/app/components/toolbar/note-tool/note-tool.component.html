@@ -1,29 +1,14 @@
-<section id="note-tool">
-    <div cdkDropList (cdkDropListDropped)="this.drop($event, this.buttons)">
-        <ng-container *ngFor="let buttonList of this.buttons">
-            
-            <div class="draggable" cdkDrag cdkDragLockAxis="y">
-                <tsr-drop-down>
-                    <tsr-drop-down-header >
-                        <div class="header" >
-                            <span>{{buttonList.title}}</span>
-                            <i cdkDragHandle class="material-icons">drag_indicator</i>
-                        </div>
-                    </tsr-drop-down-header>
-        
-                    <tsr-drop-down-body>
-                        <div class="body" cdkDropList (cdkDropListDropped)="this.drop($event, buttonList.buttons)">
-                            <ng-container *ngFor="let button of buttonList.buttons" >
-                                <button class="btn" cdkDrag (click)="this.active(button)" [class.active]="this.isActive(button)" cdkDragBoundary=".body">
-                                    <i class="material-icons">{{button.icon}}</i>
-                                    <span>{{button.title}}</span>
-                                </button>
-                            </ng-container>
-                        </div>
-                    </tsr-drop-down-body>
-                </tsr-drop-down>
-            </div>
-    
-        </ng-container>
-    </div>
-</section>
+<tsr-drop-down *ngFor="let buttonList of this.buttons">
+    <tsr-drop-down-header>
+        <span>{{buttonList.title}}</span>
+        <i class="material-icons">drag_indicator</i>
+    </tsr-drop-down-header>
+
+    <tsr-drop-down-body>
+        <button *ngFor="let button of buttonList.buttons" class="btn" (click)="this.active(button)"
+            [class.active]="this.isActive(button)">
+            <i class="material-icons">{{button.icon}}</i>
+            <span>{{button.title}}</span>
+        </button>
+    </tsr-drop-down-body>
+</tsr-drop-down>

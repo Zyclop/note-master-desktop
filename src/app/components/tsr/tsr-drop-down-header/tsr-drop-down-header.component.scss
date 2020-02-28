@@ -1,4 +1,16 @@
 .collapsible {
+    display: flex;
+    height: inherit;
+    align-items: center;
     cursor: pointer;
+    width: 100%;
 }
 
+i {
+    transform: rotate(-90deg);
+    transition: 150ms transform ease-in-out;
+}
+
+i.active {
+    transform: rotate(0);
+}
