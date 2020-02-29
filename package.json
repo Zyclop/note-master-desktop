@@ -95,6 +95,8 @@
     "node": ">=10.13.0"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-angular": "^1.2.1",
+    "@ckeditor/ckeditor5-build-decoupled-document": "^17.0.0",
     "angular-split": "^3.0.3",
     "tslib": "1.10.0"
   }

@@ -22,7 +22,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 import { MatButtonModule } from '@angular/material/button';
-import { AngularSplitModule } from 'angular-split';
+import { AngularSplitModule, SplitComponent } from 'angular-split';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
@@ -32,6 +32,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NoteToolComponent } from './components/toolbar/note-tool/note-tool.component';
 import { TsrMaterialModule } from './components/tsr/tsr-material.module';
+
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 @NgModule({
@@ -61,9 +63,10 @@ import { TsrMaterialModule } from './components/tsr/tsr-material.module';
 		MatButtonModule,
 		MatTooltipModule,
 		DragDropModule,
-		TsrMaterialModule
+		TsrMaterialModule,
+		CKEditorModule
 	],
-	providers: [],
+	providers: [SplitComponent],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

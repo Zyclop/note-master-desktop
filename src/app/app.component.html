@@ -1,19 +1,15 @@
 <section id="app">
-    <section id="titlebar-slot">
-        <app-title-bar></app-title-bar>
-    </section>
+    <app-title-bar></app-title-bar>
 
-    <section id="app-slot">
-        <as-split unit="pixel" gutterSize="10">
+    <as-split unit="pixel" gutterSize="2">
 
-            <as-split-area size="250" minSize="75" maxSize="400">
-                <app-toolbar></app-toolbar>
-            </as-split-area>
+        <as-split-area size="250" minSize="65" maxSize="400">
+            <app-toolbar></app-toolbar>
+        </as-split-area>
 
-            <as-split-area size="*">
-                <router-outlet></router-outlet>
-            </as-split-area>
+        <as-split-area id="app" size="*">
+            <router-outlet></router-outlet>
+        </as-split-area>
 
-        </as-split>
-    </section>
+    </as-split>
 </section>

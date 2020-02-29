@@ -1,12 +1,5 @@
-section#app {
-    display: flex;
-    flex-direction: column;
-
-    section#titlebar-slot {
-        height: var(--titlebar-height);
+as-split {
+    #app {
+        height: calc(100vh - var(--tittlebar-height) - 2px);
     }
-
-    section#app-slot {
-    }
-    
 }
