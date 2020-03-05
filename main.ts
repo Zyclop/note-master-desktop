@@ -22,7 +22,7 @@ function createWindow(): BrowserWindow {
 		'minWidth': 400,
 		'minHeight': 300,
 		frame: false,
-		titleBarStyle: 'hidden',
+		titleBarStyle: 'hiddenInset',
 		webPreferences: {
 			nodeIntegration: true,
 			allowRunningInsecureContent: (serve) ? true : false,

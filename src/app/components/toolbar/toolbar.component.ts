@@ -25,7 +25,8 @@ export class ToolbarComponent {
 	public activeButton: ToolButton;
 	
 	constructor(private _router: Router) {
-		this.setTool('note');
+		this.activeButton = this.buttons[0];
+		this.setTool(this.buttons[0].url??'note');
 	}
 
 	active(button: ToolButton) {

@@ -5,6 +5,7 @@ export interface ToolBoxButton {
 
 export interface ToolButtonList {
     title?: string;
+    active?: boolean;
     buttons: ToolButton[];
 }
 

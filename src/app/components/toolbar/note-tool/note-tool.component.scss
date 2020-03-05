@@ -51,7 +51,6 @@ tsr-drop-down-body {
 		background-color: unset;
 		display: flex;
 		align-items: center;
-		color: #10ac84;
 		height: 34px;
 		padding: 0;
 		margin-top: 1px;
@@ -59,6 +58,7 @@ tsr-drop-down-body {
 		background-color: #3b4252;
 		cursor: pointer;
 		i {
+			color: #10ac84;
 			margin: 0 8px;
 			font-size: 20px;
 		}
@@ -66,7 +66,8 @@ tsr-drop-down-body {
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			/* overflow: hidden; */
-			font-weight: 500;
+			color: #a3dcdc;
+			// font-weight: 500;
 			letter-spacing: -1px;
 			font-size: 12px;
 			text-transform: uppercase;
@@ -83,7 +84,8 @@ tsr-drop-down-body {
 			rgba(0, 212, 255, 0) 100%
 		);
 		background-color: #3b4252;
-		border-right: 3px solid #10ac84;
+		// border-right: 3px solid #10ac84;
+		// border-bottom: 1px solid #10ac84;
 	}
 	button:hover {
 		background: linear-gradient(

@@ -1,4 +1,4 @@
-<tsr-drop-down *ngFor="let buttonList of this.buttons">
+<tsr-drop-down *ngFor="let buttonList of this.buttons" [expanded]="buttonList.active" (afterExpand)="this.log()" (afterCollapse)="this.log()">
     <tsr-drop-down-header>
         <span>{{buttonList.title}}</span>
         <i class="material-icons">drag_indicator</i>

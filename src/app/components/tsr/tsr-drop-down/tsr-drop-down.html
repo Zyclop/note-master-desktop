@@ -1,0 +1,5 @@
+<ng-content select="tsr-drop-down-header"></ng-content>
+<div class="tsr-drop-down-body" [@bodyDropDown]="_getExpandedState()" (@bodyDropDown.done)="_bodyAnimationDone.next($event)">
+    <ng-content select="tsr-drop-down-body">
+    </ng-content>
+</div>

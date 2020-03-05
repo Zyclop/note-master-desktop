@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ToolButtonList, ToolButton } from '../toolbar.interfaces';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
@@ -7,11 +7,12 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 	templateUrl: './note-tool.component.html',
 	styleUrls: ['./note-tool.component.scss']
 })
-export class NoteToolComponent implements OnInit {
+export class NoteToolComponent {
 
 	public buttons: ToolButtonList[] = [
 		{
 			title: 'CREATE NOTE',
+			active: true,
 			buttons: [
 				{ title: 'basic', icon: 'description' },
 				{ title: 'list', icon: 'check_box' },
@@ -44,9 +45,6 @@ export class NoteToolComponent implements OnInit {
 	constructor() {
 	}
 
-	ngOnInit(): void {
-	}
-
 	active(button: ToolButton) {
 		this.activeButton = button;
 	}
@@ -57,6 +55,10 @@ export class NoteToolComponent implements OnInit {
 
 	drop(event: CdkDragDrop<string[]>, array: any[]) {
 		moveItemInArray(array, event.previousIndex, event.currentIndex);
+	}
+
+	log() {
+		console.log('done!');
 	}
 
 }
