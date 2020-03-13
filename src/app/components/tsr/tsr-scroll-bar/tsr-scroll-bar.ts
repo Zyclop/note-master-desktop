@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, AfterViewInit, ViewContainerRef, ViewChild, Input } from '@angular/core';
+import { Component, ElementRef, HostListener, AfterViewInit, ViewChild, Input } from '@angular/core';
 import { tsrScrollBarAnimations } from './tsr-scroll-bar.animations';
 
 let unique_id = 0;
@@ -17,7 +17,12 @@ export class TsrScrollBar implements AfterViewInit {
 
 	@ViewChild('scrollBar')
 	private _scrollBar: ElementRef;
+
 	private _thumbState: boolean = false;
+
+	private _scFlag: boolean = false;
+	public _thumbHeight = 0;
+	public _trackHeight = 0;
 
 	@Input()
 	get thumbState(): boolean {
@@ -27,22 +32,40 @@ export class TsrScrollBar implements AfterViewInit {
 		this._thumbState = thumbState;
 	}
 
-	constructor() { }
+	constructor() {}
 
 	ngAfterViewInit(): void {
-		console.log(this._scrollBar);
+		this._thumbHeight = this._setThumbHeight();
+		this._trackHeight = this._scrollBar.nativeElement.offsetHeight;
+		this._scFlag = true;
 	}
 
 	@HostListener('mouseenter') onMouseEnter() {
-		this.toggle();
+		// this.toggle();
+		// this._thumbHeight = this._setThumbHeight();
+		console.log(this._scrollBar);		
 	}
 
 	@HostListener('mouseleave') onMouseLeave() {
-		this.toggle();
+		// this.toggle();
+		// this._thumbHeight = this._setThumbHeight();
 	}
 
 	_getThumbState(): TsrScrollBarState {
 		return this._thumbState ? 'visible' : 'hidden';
+	}
+
+	_getThumbHeight(): string {
+		return (!this._scFlag) ? '0px' : this._thumbHeight+'px';
+	}
+	
+	_setThumbHeight() {
+		const thumbHeight = this._scrollBar.nativeElement.offsetHeight / this._scrollBar.nativeElement.scrollHeight;
+		return (thumbHeight > 1) ? thumbHeight : 0;
+	}
+	
+	_setTrackHeight() {
+		return this._scrollBar.nativeElement.offsetHeight;
 	}
 
 	toggle(): void {

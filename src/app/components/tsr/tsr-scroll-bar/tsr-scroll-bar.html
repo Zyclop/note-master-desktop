@@ -1,6 +1,6 @@
 <div #scrollBar id="scroll-bar">
     <ng-content></ng-content>
-    <div class="scroll-bar-track">
-        <div [@scrollBarThumb]="_getThumbState()" class="scroll-bar-thumb"></div>
+    <div class="scroll-bar-track" [style.display]="(_getThumbHeight() > '1px') ? 'unset' : 'none'">
+        <div [@scrollBarThumb]="_getThumbState()" class="scroll-bar-thumb" [style.height]="_getThumbHeight()"></div>
     </div>
 </div>
