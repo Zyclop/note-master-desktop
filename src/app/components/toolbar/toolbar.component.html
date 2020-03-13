@@ -1,8 +1,14 @@
 <section id="toolbar">
     <section id="main-bar" cdkDropList (cdkDropListDropped)="this.drop($event, this.buttons)">
-        <button cdkDrag cdkDragBoundary="#main-bar" cdkDragLockAxis="y" *ngFor="let button of this.buttons" (click)="this.onClick(button)" [class.active]="this.isActive(button)">
-            <i class="material-icons" [class]="button.classList">{{button.icon}}</i>
-        </button>
+        <div class="buttons-wrapper">
+            <ng-container *ngFor="let button of this.buttons">
+                <button type="button" [id]="button.title" cdkDrag cdkDragBoundary=".buttons-wrapper" cdkDragLockAxis="y"
+                    (click)="this.onClick(button)" [class.active]="this.isActive(button)">
+                    <i class="material-icons-sharp" [class]="button.classList">{{button.icon}}</i>
+                    <label [for]="button.title">{{button.title}}</label>
+                </button>
+            </ng-container>
+        </div>
     </section>
     <section id="child-bar">
         <router-outlet name="tool"></router-outlet>

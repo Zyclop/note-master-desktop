@@ -1,14 +1,16 @@
-<tsr-drop-down *ngFor="let buttonList of this.buttons" [expanded]="buttonList.active" (afterExpand)="this.log()" (afterCollapse)="this.log()">
+<tsr-drop-down *ngFor="let buttonList of this.buttons" [expanded]="buttonList.active">
     <tsr-drop-down-header>
         <span>{{buttonList.title}}</span>
-        <i class="material-icons">drag_indicator</i>
+        <i class="material-icons-sharp">drag_indicator</i>
     </tsr-drop-down-header>
 
     <tsr-drop-down-body>
-        <button *ngFor="let button of buttonList.buttons" class="btn" (click)="this.active(button)"
-            [class.active]="this.isActive(button)">
-            <i class="material-icons">{{button.icon}}</i>
-            <span>{{button.title}}</span>
-        </button>
+        <tsr-scroll-bar>
+            <button *ngFor="let button of buttonList.buttons" (click)="this.handle(button)"
+                [class.active]="this.isActive(button)">
+                <i class="material-icons-sharp">{{button.icon}}</i>
+                <span>{{button.title}}</span>
+            </button>
+        </tsr-scroll-bar>
     </tsr-drop-down-body>
 </tsr-drop-down>

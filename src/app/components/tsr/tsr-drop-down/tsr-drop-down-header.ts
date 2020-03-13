@@ -11,7 +11,7 @@ import { tsrDropDownAnimations } from './tsr-drop-down.animations';
 	},
 	template: `
 		<div class="collapsible">
-			<i [@indicatorRotate]="_getExpandedState()" class="material-icons">arrow_drop_down</i>
+			<i [@indicatorRotate]="_getExpandedState()" class="material-icons tsr-drop-down-indicator">arrow_drop_down</i>
 			<ng-content></ng-content>
 		</div>
 	`

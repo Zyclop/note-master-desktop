@@ -1,99 +1,96 @@
 section#toolbar {
 	position: relative;
 	width: 100%;
-    height: var(--toolbar-height);
+	height: var(--toolbar-height);
 	background-color: var(--toolbar-background);
 	display: flex;
-    overflow: hidden;
-    
-	section#main-bar  {
-        padding-top: var(--toolbar-padding-top);
-        height: 100%;
+	overflow: hidden;
+
+	section#main-bar {
+		padding-top: var(--toolbar-padding-top);
+		height: 100%;
 		width: var(--toolbar-main-width);
-        min-width: var(--toolbar-main-width);
+		min-width: var(--toolbar-main-width);
 		display: flex;
 		align-items: center;
-        flex-direction: column;
+		flex-direction: column;
 	}
 
 	section#child-bar {
-        width: 100%;
-        height: 100%;
-        overflow-y: auto;
-        box-shadow: -1px 0px 5px 0px #00000029;
-    }
-    
-    section#child-bar::-webkit-scrollbar {
-        width: 7px;
-    }
-    section#child-bar::-webkit-scrollbar-track {
-        background-color: #383F49;
-    }
-    section#child-bar::-webkit-scrollbar-thumb {
-        background-color: #10AC84;
-    }
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+		box-shadow: -1px 0px 5px 0px #00000029;
+	}
+	section#child-bar::-webkit-scrollbar {
+		width: 8px;
+	}
+	section#child-bar::-webkit-scrollbar-track {
+		background-color: #383f49;
+	}
+	section#child-bar::-webkit-scrollbar-thumb {
+		background-color: var(--color-secondary-white);
+	}
 }
 
-//button and button on dragging
-button, button.cdk-drag-preview  {
-    position: relative;
-    height: var(--toolbar-main-button-size);
-    width: var(--toolbar-main-button-size);
-    margin-bottom: 6px;
-    background-color: #353b48;
-    
-    outline: unset;
-    border: unset;
-    
-    color: #10ac84;
-    border-radius: 20%;
-    transition: 100ms background-color, box-shadow ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    cursor: pointer;
-    i.rotated {
-        transition: 100ms color ease-in-out;
-        transform: rotate(-90deg);
-    }
+button {
+	position: relative;
+	height: var(--toolbar-main-button-size);
+	width: var(--toolbar-main-button-size);
+	margin-bottom: 2px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: unset;
+	outline: unset;
+	border: unset;
+	transition: 250ms color, text-shadow ease-in-out;
+
+	i {
+		color: var(--color-main-white);
+		pointer-events: none;
+	}
+	i.rotated {
+		transform: rotate(-90deg);
+	}
+
+	label {
+		color: var(--color-text-light);
+		text-transform: capitalize;
+		font-weight: 500;
+		transform: translate(0, 5px);
+		font-size: 10px;
+		pointer-events: none;
+	}
 }
 
-//button on hover, button active and button active on dragging
-button:hover, button.active, button.active.cdk-drag-preview {
-    box-shadow: 0px 0px 5px 0px #00000029;
-    background-color: #3a3f4b;
-    i {
-        color: #0ec597;
-    }
+button.active:before {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: calc(100% - 3px);
+	height: 100%;
+	border-left: 1px solid white;
+	background-color: #607d8b14;
+	pointer-events: none;
 }
 
-//button on hover, button active after and button active after on dragging
-button:hover:after, button.active:after, button.active.cdk-drag-preview:after, button.cdk-drag-preview:after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 20%;
-    pointer-events: none;
-    animation: fadein 100ms ease-in-out;
-    border-left: 3px solid #40739E;
-}
-
-@keyframes fadein {
-    0% {
-        border-left: 0px solid rgba(64, 116, 158, 0);
-    } 100% {
-        border-left: 3px solid #40739E;
-    }
+button.active i,
+button.active label {
+	color: white;
 }
 
 .cdk-drag-placeholder {
-    opacity: 0;
+	opacity: 0;
+	cursor: grabbing;
+}
+.cdk-drag-preview {
+	opacity: 0.8;
 }
 
-.cdk-drag-animating, .cdk-drag-placeholder {
+.cdk-drag-animating {
 	transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) !important;
 }

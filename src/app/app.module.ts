@@ -25,12 +25,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { AngularSplitModule, SplitComponent } from 'angular-split';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NoteToolComponent } from './components/toolbar/note-tool/note-tool.component';
+
 import { TsrMaterialModule } from './components/tsr/tsr-material.module';
 
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -62,6 +64,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 		BrowserAnimationsModule,
 		MatButtonModule,
 		MatTooltipModule,
+		MatDialogModule,
 		DragDropModule,
 		TsrMaterialModule,
 		CKEditorModule

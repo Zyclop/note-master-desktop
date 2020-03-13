@@ -11,7 +11,7 @@ export class NoteToolComponent {
 
 	public buttons: ToolButtonList[] = [
 		{
-			title: 'CREATE NOTE',
+			title: 'CREATE',
 			active: true,
 			buttons: [
 				{ title: 'basic', icon: 'description' },
@@ -43,6 +43,12 @@ export class NoteToolComponent {
 	public activeButton: ToolButton;
 
 	constructor() {
+		this.active(this.buttons[0].buttons[0]);
+	}
+
+	handle(button: ToolButton) {
+		this.active(button);
+		this.openDialog();
 	}
 
 	active(button: ToolButton) {
@@ -57,8 +63,8 @@ export class NoteToolComponent {
 		moveItemInArray(array, event.previousIndex, event.currentIndex);
 	}
 
-	log() {
-		console.log('done!');
+	openDialog(): void {
+
 	}
 
 }

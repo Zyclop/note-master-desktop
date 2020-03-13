@@ -1,0 +1,16 @@
+#scroll-bar {
+    position: relative;
+    .scroll-bar-track {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 100%;
+        
+        .scroll-bar-thumb {
+            width: inherit;
+            height: 70px;
+            background-color: #a7a7a777;
+        }
+    }
+}

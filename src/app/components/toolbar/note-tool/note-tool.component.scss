@@ -6,13 +6,12 @@ tsr-drop-down-header {
 	height: 24px;
 	border-radius: unset;
 	user-select: none;
-	color: #a3dcdc;
 	transition: 100ms background-color ease-in-out;
+	color: white;
 
 	span {
 		margin: 2px 0;
-		font-family: "rubik";
-		font-weight: 500;
+		font-weight: 600;
 		letter-spacing: -1px;
 		font-size: 13px;
 		white-space: nowrap;
@@ -43,57 +42,57 @@ tsr-drop-down-header:hover {
 	}
 }
 
-tsr-drop-down-body {
-	button {
-		width: 100%;
-		outline: unset;
-		border: unset;
-		background-color: unset;
-		display: flex;
-		align-items: center;
-		height: 34px;
-		padding: 0;
-		margin-top: 1px;
-		user-select: none;
-		background-color: #3b4252;
-		cursor: pointer;
-		i {
-			color: #10ac84;
-			margin: 0 8px;
-			font-size: 20px;
-		}
-		span {
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			/* overflow: hidden; */
-			color: #a3dcdc;
-			// font-weight: 500;
-			letter-spacing: -1px;
-			font-size: 12px;
-			text-transform: uppercase;
-		}
+button {
+	width: 100%;
+	outline: unset;
+	border: unset;
+	background-color: unset;
+	display: flex;
+	align-items: center;
+	height: 34px;
+	padding: 0;
+	margin-top: 1px;
+	user-select: none;
+	background-color: #3b4252;
+	cursor: pointer;
+	i {
+		color: var(--color-main-white);
+		margin: 0 8px;
+		font-size: 20px;
 	}
-	button:last-child {
-		margin-bottom: 1px;
+	span {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: var(--color-text-light);
+		letter-spacing: 0px;
+		font-size: 11px;
+		text-transform: uppercase;
 	}
-	button.active {
-		background: linear-gradient(
-			270deg,
-			rgba(0, 170, 255, 0.185) 0%,
-			rgba(0, 170, 255, 0.014) 26%,
-			rgba(0, 212, 255, 0) 100%
-		);
-		background-color: #3b4252;
-		// border-right: 3px solid #10ac84;
-		// border-bottom: 1px solid #10ac84;
+}
+
+button:last-child {
+	margin-bottom: 1px;
+}
+
+button.active {
+	position: relative;
+	i, span {
+		color: white;
 	}
-	button:hover {
-		background: linear-gradient(
-			270deg,
-			rgba(0, 170, 255, 0.185) 0%,
-			rgba(0, 170, 255, 0.014) 26%,
-			rgba(0, 212, 255, 0) 100%
-		);
-		background-color: #3b4252;
-	}
+}
+
+button.active:after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: calc(100% - 3px);
+	height: 100%;
+	border-left: 1px solid white;
+	background-color: #446d8236;
+	pointer-events: none;
+}
+
+button:hover {
+
 }
